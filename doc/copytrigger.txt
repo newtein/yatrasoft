@@ -1,0 +1,53 @@
+drop procedure if exists readit;
+delimiter $$
+
+create procedure readit()
+begin
+declare finish int default 0;
+
+declare t1ype varchar(30);
+declare t2ype varchar(40);
+declare g varchar(10);
+declare emailcur cursor for select id, name,gender from pilgrim;
+
+declare continue handler for not found set finish=1;
+
+open emailcur;
+
+while finish=0 do
+fetch emailcur into t1ype,t2ype,g;
+insert into train (id,name,gender) values (t1ype,t2ype,g);
+
+end while;
+close emailcur;
+end 
+$$ delimiter ;
+
+call readit();
+
+
+drop procedure if exists balcit;
+delimiter $$
+
+create procedure balcit()
+begin
+declare finish int default 0;
+
+declare t1ype varchar(30);
+
+declare emailcur cursor for select id from balancesheet;
+
+declare continue handler for not found set finish=1;
+
+open emailcur;
+
+while finish=0 do
+fetch emailcur into t1ype;
+insert into trainamt (id) values (t1ype);
+
+end while;
+close emailcur;
+end 
+$$ delimiter ;
+
+call balcit();

@@ -1,0 +1,23 @@
+drop TRIGGER if EXISTS before_update;
+
+delimiter $
+CREATE TRIGGER before_update BEFORE UPDATE ON balancesheet for EACH ROW
+BEGIN
+if new.persons!=0 then
+set new.persons=old.persons+new.persons;
+set new.adultnon=old.adultnon+new.adultnon;
+set new.scmnon=old.scmnon+new.scmnon;
+set new.scfnon=old.scfnon+new.scfnon;
+set new.childnon=old.childnon+new.childnon;
+
+set new.adultac=old.adultac+new.adultac;
+set new.scmac=old.scmac+new.scmac;
+set new.scfac=old.scfac+new.scfac;
+set new.childac=old.childac+new.childac;
+
+set new.paid=old.paid+new.paid;
+set new.balance=old.balance+new.balance;
+set new.total=old.total+new.total;
+end if;
+END $
+DELIMITER ;

@@ -1,0 +1,25 @@
+drop TRIGGER if EXISTS after_insert;
+delimiter $$
+
+create trigger after_insert after insert on pilgrim for each row
+begin
+
+insert into train (id,name,gender) values (new.id,new.name,new.gender);
+
+end
+
+$$ delimiter ;
+
+drop TRIGGER if EXISTS after_insert;
+delimiter $$
+
+create trigger after_insert after insert on balancesheet for each row
+begin
+
+insert into trainamt (id) values (new.id);
+
+end
+
+$$ delimiter ;
+
+4229007333

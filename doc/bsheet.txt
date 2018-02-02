@@ -1,0 +1,35 @@
+18 Feb 17
+288600
+-53000(ppf,pnb)
+-87770
+
+=1,47,830
+
+
+train 
+a:2315/6065
+b:1465/3770
+c:1250/3190
+
+total train=113805
+-1scmac/1scfac/4scfnon/2anon/1scmnon/2aac
+a 2/2
+b 1/1
+c 4/1
+
+=30185
+
+113805-30185
+=83620
+--->
+anon 4
+scmnon 2
+scfnon 6
+
+aac 8
+scmac 1
+scfac 6
+rs 91120
+---->
+
+
