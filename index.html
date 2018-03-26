@@ -55,6 +55,18 @@
       
     </style>
   </head>
+  
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+	  
+   <script> 
+    $(function(){
+      $("#includedContentDiv").load("https://raw.githubusercontent.com/newtein/no_escape_search/master/tempfile.html"); 
+    });
+    </script> 
+	
 
   <body>
 
@@ -103,6 +115,8 @@
         </section>
 
         <aside id="sidebar">
+<a href="#otherProjects"><h2 class="headB">   Other Projects  </h2> </a>
+
 
            <h2> Internship-Project </h2>
           <p> Dec, 2016 - Jan, 2017 </p>
@@ -115,7 +129,8 @@
           <p>Java-JavaFX, MySQL, JDBC, Apache POI.</p>
 
      
-          
+          <div id="includedContentDiv"></div>
+
             <p class="repo-owner"><a href="https://github.com/newtein/yatrasoft">yatrasoft</a> is maintained by <a href="https://github.com/newtein"> Harshit Gujral (newtein)</a>.</p>
           
 
